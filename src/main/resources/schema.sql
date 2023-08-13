@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `test`.`users` ;
 CREATE TABLE `users` (
                          `user_id` int(11) NOT NULL AUTO_INCREMENT,
                          `username` varchar(45) NOT NULL,
-                         `password` varchar(64) NOT NULL,
+                         `password` varchar(100) NOT NULL,
                          `role` varchar(45) NOT NULL,
                          `enabled` tinyint(4) DEFAULT NULL,
                          PRIMARY KEY (`user_id`)
@@ -44,6 +44,10 @@ INSERT INTO `users` (`username`,`password`,`role`,`enabled`)
 VALUES ('namhm',
         '$2a$10$XptfskLsT1l/bRTLRiiCgejHqOpgXFreUnNUa35gJdCr2v2QbVFzu',
         'ROLE_USER', 1);
+INSERT INTO `users` (`username`,`password`,`role`,`enabled`)
+VALUES ('tommy',
+        '$argon2id$v=19$m=16384,t=2,p=1$B7sYlx4V+zLfAoWGZ7egFg$LvjgO3gvxZISQg38eOvahfHrwRCig0/HRNqwfOcr9n4',
+        'ROLE_USER',1);
 
 INSERT INTO `users` (`username`,`password`,`role`,`enabled`)
 VALUES ('admin',
